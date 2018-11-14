@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.casandra.test.domain.cassandra.Order;
 
 @Repository
-public interface OrderRepository extends CassandraRepository<Order> {
+public interface OrderRepository extends CassandraRepository<Order, String> {
 
 	@Query("select * from ORDER_DATA where orderID = ?0")
 	public List<Order> findByOrderId(String orderID);
